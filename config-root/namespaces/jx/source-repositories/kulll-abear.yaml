@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: kulll
+    provider: github
+    repository: abear
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: kulll-abear
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/kulll/abear.git
+  org: kulll
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: abear
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/kulll/abear
