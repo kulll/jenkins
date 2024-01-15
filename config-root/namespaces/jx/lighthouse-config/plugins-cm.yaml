@@ -6,6 +6,10 @@ data:
       repos:
       - kulll/jenkins
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - kulll/abear
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      kulll/abear:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       kulll/jenkins:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,20 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      kulll/abear:
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
       kulll/jenkins:
       - config-updater
       - approve
@@ -53,6 +76,11 @@ data:
     - repos:
       - kulll/jenkins
       trusted_org: kulll
+    - repos:
+      - kulll/abear
+      trusted_org: kulll
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
