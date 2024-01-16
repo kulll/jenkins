@@ -9,6 +9,7 @@ data:
       enabled:
         kulll/abear: true
         kulll/jenkins: true
+        kulll/sebear: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -22,6 +23,7 @@ data:
       merge_method:
         kulll/abear: merge
         kulll/jenkins: merge
+        kulll/sebear: merge
       queries:
       - labels:
         - approved
@@ -34,6 +36,7 @@ data:
         repos:
         - kulll/jenkins
         - kulll/abear
+        - kulll/sebear
       - labels:
         - updatebot
         missingLabels:
@@ -45,6 +48,7 @@ data:
         repos:
         - kulll/jenkins
         - kulll/abear
+        - kulll/sebear
       target_url: http://lighthouse.jx.192.168.124.237.nip.io/merge/status
 kind: ConfigMap
 metadata:
