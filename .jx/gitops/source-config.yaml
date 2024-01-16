@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: abear
+    - name: sebear
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
